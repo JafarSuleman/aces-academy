@@ -32,7 +32,7 @@ class FeaturesSection extends StatelessWidget {
                 _FeatureItem(
                   icon: Icons.child_care,
                   title: 'Early Education',
-                  description: 'Classes from Prep to Grade 3',
+                  description: 'Classes from Prep to Grade III',
                 ),
                 _FeatureItem(
                   icon: Icons.people,

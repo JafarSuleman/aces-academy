@@ -37,32 +37,135 @@ class AboutSection extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 40),
-            const SizedBox(height: 48),
-            const Wrap(
-              spacing: 32,
-              runSpacing: 32,
-              alignment: WrapAlignment.center,
+          const SizedBox(height: 30),
+          // School Leadership
+          Container(
+            constraints: const BoxConstraints(maxWidth: 800),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _AboutCard(
-                  icon: Icons.school,
-                  title: 'Quality Education',
-                  description: 'Providing high standard education from prep to class III',
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 10,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        const Icon(
+                          Icons.person,
+                          size: 40,
+                          color: AppColors.primaryBlue,
+                        ),
+                        const SizedBox(height: 12),
+                        const Text(
+                          'School Owner',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.primaryBlue,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Awal Nawaz Khattak',
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey[800],
+                            height: 1.2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-                _AboutCard(
-                  icon: Icons.female,
-                  title: 'Female Teachers',
-                  description: 'Highly qualified female teachin\nstaff',
-                ),
-                _AboutCard(
-                  icon: Icons.chair,
-                  title: 'Modern Facilities',
-                  description: 'High standard furniture and facilities for\nkids',
+                const SizedBox(width: 24),
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 10,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                         Icon(
+                          Icons.school,
+                          size: 40,
+                          color: AppColors.primaryBlue,
+                        ),
+                        const SizedBox(height: 12),
+                        const Text(
+                          'Principal',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.primaryBlue,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Muhammad Suleman',
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey[800],
+                            height: 1.2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
-          ],
-        ),
+          ).animate()
+            .fadeIn(delay: const Duration(milliseconds: 200))
+            .slideY(begin: 0.2),
+          const SizedBox(height: 48),
+          // Rest of the existing content...
+          const Wrap(
+            spacing: 32,
+            runSpacing: 32,
+            alignment: WrapAlignment.center,
+            children: [
+              _AboutCard(
+                icon: Icons.school,
+                title: 'Quality Education',
+                description: 'Providing high standard education from prep to class III',
+              ),
+              _AboutCard(
+                icon: Icons.female,
+                title: 'Female Teachers',
+                description: 'Highly qualified female teachin\nstaff',
+              ),
+              _AboutCard(
+                icon: Icons.chair,
+                title: 'Modern Facilities',
+                description: 'High standard furniture and facilities for\nkids',
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
