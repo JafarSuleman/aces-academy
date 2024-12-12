@@ -8,25 +8,36 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDesktop = MediaQuery.of(context).size.width > 800;
-
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 80),
-      color: Colors.white,
-      child: ResponsiveWrapper(
-        child: Column(
-          children: [
-            Text(
-              'About Us',
-              style: TextStyle(
-                color: AppColors.primaryBlue,
-                fontSize: isDesktop ? 36 : 28,
-                fontWeight: FontWeight.bold,
-              ),
-            ).animate().fadeIn().slideY(
-              begin: 0.3,
-              duration: const Duration(milliseconds: 500),
+      padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+      child: Column(
+        children: [
+          const Text(
+            'About Us',
+            style: TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
             ),
+          ),
+          const SizedBox(height: 20),
+          // School description
+          Container(
+            constraints: const BoxConstraints(maxWidth: 800),
+            child: const Text(
+              'Welcome to our educational institution, where excellence meets innovation. '
+              'Founded with a vision to nurture future leaders, our school provides a '
+              'comprehensive learning environment that combines traditional values with '
+              'modern teaching methodologies. We focus on holistic development, ensuring '
+              'that every student receives the attention and guidance they need to excel '
+              'in their academic journey.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 16,
+                height: 1.5,
+              ),
+            ),
+          ),
+          const SizedBox(height: 40),
             const SizedBox(height: 48),
             const Wrap(
               spacing: 32,
@@ -52,7 +63,6 @@ class AboutSection extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }
